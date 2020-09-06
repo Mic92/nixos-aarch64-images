@@ -5,6 +5,8 @@ custom uboot firmware.
 It re-uses pre-build NixOS installation images,
 so it can be also built on non aarch64 architectures.
 
+## Example
+
 ```console
 $ nix-build -A rock64
 $ sfdisk --dump result
@@ -28,3 +30,22 @@ $ sudo dd if=./result of=/dev/mmcblk0 iflag=direct oflag=direct bs=16M status=pr
 ```
 
 Replace `/dev/mmcblk0` with your actual device.
+
+## Supported boards
+
+| Board                             | Status                                             |
+| --------------------------------- | -------------------------------------------------- |
+| [Rock64][]                        | Tested & works                                     |
+| [RockPro64][]                     | Untested & should work (please provide feedback)   |
+| [roc-pc-rk3399][]                 | Untested & should work (please provide feedback)   |
+| [PinebookPro][]                   | Untested & should work (please provide feedback)   |
+
+[Rock64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCK64
+[RockPro64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCKPro64
+[roc-pc-rk3399]: https://nixos.wiki/wiki/NixOS_on_ARM/Libre_Computer_ROC-RK3399-PC
+[PinebookPro]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_Pinebook_Pro
+
+## Add a new board
+
+See `images/rockchip.nix` for an example.
+All options are defined in [here](pkgs/build-image/options.nix);
