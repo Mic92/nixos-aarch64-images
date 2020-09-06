@@ -20,3 +20,11 @@ result1 : start=          64, size=       16320, type=0FC63DAF-8483-4772-8E79-3D
 result2 : start=       16384, size=       16384, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=34FAD60D-02BE-514E-BA65-80550BAACEF3, name="uboot"
 result3 : start=       32768, size=     5473176, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=B4283CE4-FC2F-6942-A542-ABDFB5DC7668, name="nixos", attrs="LegacyBIOSBootable"
 ```
+
+Built images can be than copied to sdcards etc as usual:
+
+``` console
+$ sudo dd if=./result of=/dev/mmcblk0 iflag=direct oflag=direct bs=16M status=progress
+```
+
+Replace `/dev/mmcblk0` with your actual device.
