@@ -7,11 +7,12 @@ let
 
   buildImage = pkgs.callPackage ./pkgs/build-image {};
   aarch64Image = pkgs.callPackage ./pkgs/aarch64-image {};
+  rockchip = uboot: pkgs.callPackage ./images/rockchip.nix {
+    inherit uboot;
+    inherit aarch64Image buildImage;
+  };
 in {
   inherit aarch64Image aarch64Pkgs;
 
-  rock64 = pkgs.callPackage ./images/rock64.nix {
-    inherit (aarch64Pkgs) ubootRock64;
-    inherit aarch64Image buildImage;
-  };
+  rock64 = rockchip aarch64Pkgs.ubootRock64;
 }

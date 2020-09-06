@@ -1,6 +1,6 @@
 { lib
 , buildImage
-, ubootRock64
+, uboot
 , aarch64Image
 , extraConfig ? {}
 }:
@@ -16,12 +16,12 @@ in buildImage {
     format = "gpt";
     partitions = {
       idbloader = {
-        source = "${ubootRock64}/idbloader.img";
+        source = "${uboot}/idbloader.img";
         size = ubootOffset - idbloaderOffset;
         start = idbloaderOffset;
       };
       uboot = {
-        source = "${ubootRock64}/u-boot.itb";
+        source = "${uboot}/u-boot.itb";
         size = ubootSize;
         start = ubootOffset;
       };
