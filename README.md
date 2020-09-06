@@ -33,12 +33,12 @@ Replace `/dev/mmcblk0` with your actual device.
 
 ## Supported boards
 
-| Board                             | Status                                             |
-| --------------------------------- | -------------------------------------------------- |
-| [Rock64][]                        | Tested & works                                     |
-| [RockPro64][]                     | Untested & should work (please provide feedback)   |
-| [roc-pc-rk3399][]                 | Untested & should work (please provide feedback)   |
-| [PinebookPro][]                   | Untested & should work (please provide feedback)   |
+| Board                            | Attribute     | Status                                             |
+| ---------------------------------|---------------| -------------------------------------------------- |
+| [Rock64][]                       | rock64        | Tested & works                                     |
+| [RockPro64][]                    | rockPro64     | Untested & should work (please provide feedback)   |
+| [roc-pc-rk3399][]                | roc-pc-rk3399 | Untested & should work (please provide feedback)   |
+| [PinebookPro][]                  | pinebookPro   | Untested & should work (please provide feedback)   |
 
 [Rock64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCK64
 [RockPro64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCKPro64
