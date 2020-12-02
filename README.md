@@ -49,3 +49,9 @@ Replace `/dev/mmcblk0` with your actual device.
 
 See `images/rockchip.nix` for an example.
 All options are defined in [here](pkgs/build-image/options.nix);
+
+## Board wishlist
+
+Allwinner boards have their bootloader in a free space after mbr:
+
+https://nixos.wiki/wiki/Template:ARM/installation_allwinner
