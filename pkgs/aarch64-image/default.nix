@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ stdenv, fetchurl, zstd }:
 
 stdenv.mkDerivation {
   name = "aarch64-image";
@@ -7,8 +7,8 @@ stdenv.mkDerivation {
     # as hydra, since `pkgs.path` is embedded in the binary
     # To get a new url use:
     # $ curl -s -L -I -o /dev/null -w '%{url_effective}' "https://hydra.nixos.org/job/nixos/release-20.03/nixos.sd_image.aarch64-linux/latest/download/1"
-    url = "https://hydra.nixos.org/build/126476381/download/1/nixos-sd-image-20.03.2906.c2c55c94c19-aarch64-linux.img.bz2";
-    sha256 = "sha256-dCXr90lTU/ek7XANIwo+kgAl1NA6I3mIs3HYcZfis+Q=";
+    url = "https://hydra.nixos.org/build/132043163/download/1/nixos-sd-image-20.09.2132.999b9b7db20-aarch64-linux.img.zst";
+    sha256 = "02xcay0wimzz1divjrzig68ncc3if25lnkja44q7lppis39qag6n";
   };
   preferLocalBuild = true;
   dontUnpack = true;
@@ -21,7 +21,11 @@ stdenv.mkDerivation {
   noAuditTmpdir = true;
   dontPatchShebangs = true;
 
+  nativeBuildInputs = [
+    zstd
+  ];
+
   installPhase = ''
-    bzcat $src > $out
+    zstdcat $src > $out
   '';
 }
