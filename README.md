@@ -45,6 +45,9 @@ Replace `/dev/mmcblk0` with your actual device.
 [roc-pc-rk3399]: https://nixos.wiki/wiki/NixOS_on_ARM/Libre_Computer_ROC-RK3399-PC
 [PinebookPro]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_Pinebook_Pro
 
+Note that boards already supported by NixOS's AArch64 image will also work. This
+includes, for example, the RaspberryPi 3 and 4.
+
 ## Add a new board
 
 See `images/rockchip.nix` for an example.
