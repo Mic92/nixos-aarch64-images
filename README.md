@@ -8,7 +8,8 @@ so it can be also built on non aarch64 architectures.
 ## Example
 
 ```console
-$ nix-build -A rock64
+$ nix-build -A rock64 # for regular Rock64
+$ nix-build -A rockPro64 # for RockPro64
 $ sfdisk --dump result
 label: gpt
 label-id: 0493C426-ACD9-9843-9C4B-268C90698145
