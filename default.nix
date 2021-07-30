@@ -15,7 +15,6 @@ in {
   inherit aarch64Image aarch64Pkgs;
 
   rock64 = rockchip aarch64Pkgs.ubootRock64;
-  # untested, but should work (TM)
   rockPro64 = rockchip aarch64Pkgs.ubootRockPro64;
   roc-pc-rk3399 = rockchip aarch64Pkgs.ubootROCPCRK3399;
   pinebookPro = rockchip aarch64Pkgs.ubootPinebookPro;
