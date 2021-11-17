@@ -37,7 +37,7 @@ Replace `/dev/mmcblk0` with your actual device.
 | Board                            | Attribute     | Status                                             |
 | ---------------------------------|---------------| -------------------------------------------------- |
 | [Rock64][]                       | rock64        | Tested & works                                     |
-| [RockPro64][]                    | rockPro64     | Tested & works                                     |
+| [RockPro64][]                    | rockPro64     | Tested & works (requires nixpkgs-unstable or 21.11)|
 | [roc-pc-rk3399][]                | roc-pc-rk3399 | Untested & should work (please provide feedback)   |
 | [PinebookPro][]                  | pinebookPro   | Untested & should work (please provide feedback)   |
 
