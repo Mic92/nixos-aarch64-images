@@ -12,7 +12,7 @@ let
     inherit aarch64Image buildImage;
   };
 in {
-  inherit aarch64Image aarch64Pkgs;
+  inherit aarch64Image;
 
   rock64 = rockchip aarch64Pkgs.ubootRock64;
   rockPro64 = rockchip aarch64Pkgs.ubootRockPro64;

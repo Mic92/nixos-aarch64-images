@@ -32,6 +32,38 @@ $ sudo dd if=./result of=/dev/mmcblk0 iflag=direct oflag=direct bs=16M status=pr
 
 Replace `/dev/mmcblk0` with your actual device.
 
+## Flakes support
+
+Flakes support is also provided. This repository has no dependencies except for nixpkgs, however we do not provide a
+lock file which means that one will be created using your system if you pull down the repo. This lets you use an
+up-to-date uboot at whatever level of stability you are already comfortable with.
+
+To build the `rockPro64` image without pulling down the repo, use:
+```
+nix build --no-write-lock-file 'github:Mic92/nixos-aarch64-images#rockPro64'
+```
+
+To build the `rockPro64` image without pulling down the repo and switching nixpkgs with nixpkgs-unstable:
+```
+nix build --no-write-lock-file --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-unstable 'github:Mic92/nixos-aarch64-images#rockPro64'
+```
+
+Of course, you can replace `rockPro64` with any of the outputs included in this flake. To see the outputs, you can
+invoke `nix flake show`:
+
+```
+❯ nix flake show
+git+file:///home/user/git/nixos-aarch64-images
+└───packages
+    └───x86_64-linux
+        ├───aarch64Image: package 'aarch64-image'
+        ├───pinebookPro: package 'image'
+        ├───roc-pc-rk3399: package 'image'
+        ├───rock64: package 'image'
+        └───rockPro64: package 'image'
+```
+
+
 ## Supported boards
 
 | Board                            | Attribute     | Status                                             |
