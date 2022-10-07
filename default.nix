@@ -1,9 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  aarch64Pkgs = import pkgs.path {
-    system = "aarch64-linux";
-  };
+  aarch64Pkgs = pkgs.pkgsCross.aarch64-multiplatform;
 
   buildImage = pkgs.callPackage ./pkgs/build-image {};
   aarch64Image = pkgs.callPackage ./pkgs/aarch64-image {};
