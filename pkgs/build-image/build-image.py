@@ -32,6 +32,7 @@ class Partition:
     source_offset: int = 0
     # ignored if mbr is used
     attrs: Optional[str] = None
+    _calculated_size: Optional[int] = None
 
     def to_sfdisk(self) -> str:
         line = f"{self.file}: "
@@ -39,7 +40,7 @@ class Partition:
         attributes = dict(
             name=self.name,
             start=self.start,
-            size=self.size,
+            size=self.final_size,
             type=self.type,
             attrs=self.attrs,
         )
@@ -77,6 +78,24 @@ class Partition:
         for key, value in args.items():
             final.append(f"{key}={value}")
         return final
+
+    @property
+    def final_size(self) -> int:
+        """
+        The definitive size of the partition in blocks. It is calculated
+        explicitly when neither size nor source_size are given.
+        """
+        if self.size is not None:
+            return self.size
+        if self.source_size is not None:
+            return self.source_size
+        if self._calculated_size is not None:
+            return self._calculated_size
+
+        cmd = ["du", "-B", "512", "--apparent-size", self.source]
+        proc = subprocess.run(cmd, check=True, stdout=subprocess.PIPE)
+        self._calculated_size = int(proc.stdout)
+        return self._calculated_size
 
 
 def get_disk_layout(format: str, partitions: List[Partition], first_lba: int) -> str:
@@ -125,15 +144,8 @@ def compute_image_size(partitions: List[Partition]) -> int:
     # leave some space for backup gpt
     size = 97
     for p in partitions:
-        if p.size is None:
-            if p.source_size is None:
-                cmd = ["du", "-B", "512", "--apparent-size", p.source]
-                proc = subprocess.run(cmd, check=True, stdout=subprocess.PIPE)
-                size += int(proc.stdout)
-            else:
-                size += p.source_size
-        else:
-            size += p.size
+        size += p.final_size
+
     return size
 
 
