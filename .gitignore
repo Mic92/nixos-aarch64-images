@@ -2,6 +2,3 @@
 .idea
 *.log
 tmp/
-
-# just now we don't want to lock
-flake.lock

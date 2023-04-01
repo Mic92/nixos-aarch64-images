@@ -1,7 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  aarch64Pkgs = pkgs.pkgsCross.aarch64-multiplatform;
+  unfreePkgs = import pkgs.path {
+    config.allowUnfree = true;
+    inherit (pkgs) system;
+  };
+  aarch64Pkgs = unfreePkgs.pkgsCross.aarch64-multiplatform;
 
   buildImage = pkgs.callPackage ./pkgs/build-image {};
   aarch64Image = pkgs.callPackage ./pkgs/aarch64-image {};
