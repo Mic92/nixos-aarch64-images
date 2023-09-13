@@ -7,8 +7,9 @@ stdenv.mkDerivation {
     # as hydra, since `pkgs.path` is embedded in the binary
     # To get a new url use:
     # $ curl -s -L -I -o /dev/null -w '%{url_effective}' "https://hydra.nixos.org/job/nixos/release-20.03/nixos.sd_image.aarch64-linux/latest/download/1"
-    url = "https://hydra.nixos.org/build/214526899/download/1/nixos-sd-image-22.11.3408.a575c243c23-aarch64-linux.img.zst";
-    sha256 = "sha256-lYTksexy1Z9RJKtdZO1ufutLCPV4FmFVpF2alFMETEg=";
+    url = "
+https://hydra.nixos.org/build/234880195/download/1/nixos-sd-image-23.05.3427.e5f018cf150e-aarch64-linux.img.zst";
+    sha256 = "sha256-vxC8OTk4NxCN0fX8/iwelL37AbS8l3w3M9VQMQiPRSo=";
   };
   preferLocalBuild = true;
   dontUnpack = true;
