@@ -73,10 +73,10 @@ git+file:///home/user/git/nixos-aarch64-images
 | [roc-pc-rk3399][]                | roc-pc-rk3399 | Untested & should work (please provide feedback)                            |
 | [PinebookPro][]                  | pinebookPro   | [Untested, hopefully works?](https://github.com/Mic92/nixos-aarch64-images/issues/8) |
 
-[Rock64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCK64
-[RockPro64]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_ROCKPro64
-[roc-pc-rk3399]: https://nixos.wiki/wiki/NixOS_on_ARM/Libre_Computer_ROC-RK3399-PC
-[PinebookPro]: https://nixos.wiki/wiki/NixOS_on_ARM/PINE64_Pinebook_Pro
+[Rock64]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_ROCK64
+[RockPro64]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_ROCKPro64
+[roc-pc-rk3399]: https://wiki.nixos.org/wiki/NixOS_on_ARM/Libre_Computer_ROC-RK3399-PC
+[PinebookPro]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_Pinebook_Pro
 
 ## Add a new board
 
@@ -87,4 +87,4 @@ All options are defined in [here](pkgs/build-image/options.nix);
 
 Allwinner boards have their bootloader in a free space after mbr:
 
-https://nixos.wiki/wiki/Template:ARM/installation_allwinner
+https://wiki.nixos.org/wiki/Template:ARM/installation_allwinner
