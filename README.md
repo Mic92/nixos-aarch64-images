@@ -66,15 +66,17 @@ git+file:///home/user/git/nixos-aarch64-images
 
 ## Supported boards
 
-| Board                            | Attribute     | Status                                                                      |
-| ---------------------------------|---------------| --------------------------------------------------------------------------- |
-| [Rock64][]                       | rock64        | Tested & works                                                              |
-| [RockPro64][]                    | rockPro64     | Tested & works (requires nixpkgs-unstable or 21.11)                         |
-| [roc-pc-rk3399][]                | roc-pc-rk3399 | Untested & should work (please provide feedback)                            |
+| Board                            | Attribute     | Status                                                                               |
+| ---------------------------------|---------------| ------------------------------------------------------------------------------------ |
+| [Rock64][]                       | rock64        | Tested & works                                                                       |
+| [RockPro64][]                    | rockPro64     | Tested & works                                                                       |
+| [CM3588][]                       | cm3588NAS     | Tested & works                                                                       |
+| [roc-pc-rk3399][]                | roc-pc-rk3399 | Untested & should work (please provide feedback)                                     |
 | [PinebookPro][]                  | pinebookPro   | [Untested, hopefully works?](https://github.com/Mic92/nixos-aarch64-images/issues/8) |
 
 [Rock64]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_ROCK64
 [RockPro64]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_ROCKPro64
+[CM3588]: https://wiki.friendlyelec.com/wiki/index.php/CM3588
 [roc-pc-rk3399]: https://wiki.nixos.org/wiki/NixOS_on_ARM/Libre_Computer_ROC-RK3399-PC
 [PinebookPro]: https://wiki.nixos.org/wiki/NixOS_on_ARM/PINE64_Pinebook_Pro
 

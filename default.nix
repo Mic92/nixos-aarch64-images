@@ -21,4 +21,5 @@ in {
   roc-pc-rk3399 = rockchip aarch64Pkgs.ubootROCPCRK3399;
   pinebookPro = rockchip aarch64Pkgs.ubootPinebookPro;
   rock4cPlus = rockchip aarch64Pkgs.ubootRock4CPlus;
+  cm3588NAS = rockchip aarch64Pkgs.ubootCM3588NAS;
 }
